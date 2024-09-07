@@ -1,0 +1,16 @@
+delimiter //
+CREATE FUNCTION obtenerdatosclient(id_cliente INT) /* Se crea una función llamada obtenerdatosclient y asímismo el tipo de dato en este caso INT
+RETURNS VARCHAR(255)
+DETERMINISTIC
+BEGIN
+    DECLARE resultado VARCHAR(255); /* se declara la variable resultado en la cual se va a almacenar la función
+
+    SELECT CONCAT(id_cliente, ', ', nombre, ', ', contacto)  /* esta función llama a mas un campo de la tabla clientes, y asímismo se muestra en el resultado
+    INTO resultado
+    FROM clientes
+    WHERE id_cliente = id_cliente /* aca llamamos al dato ingresado -linea_2-,y se compara con la consulta
+    ORDER BY id_cliente DESC
+    limit 1; /* se establece un limite para que no devuelva datos no existentes
+
+    RETURN resultado;
+END //
